@@ -10,7 +10,7 @@ from image_processing import download_image, process_images
 from report_word import create_report_docx
 
 
-IMAGE1_URL = "https://i.imgur.com/3ZQ3ZQF.jpeg"   # image libre de droit 
+IMAGE1_URL = "https://raw.githubusercontent.com/akabab/fictional-characters/master/images/frankenstein.jpg"  # image libre de droit 
 
 
 def main():
