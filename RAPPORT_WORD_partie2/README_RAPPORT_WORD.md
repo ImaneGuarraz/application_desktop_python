@@ -93,51 +93,52 @@ Partie2/
 ## Fonctionnalités principales
 
 ### Téléchargement du livre
-- Récupération automatique du texte brut depuis Project Gutenberg  
-- Extraction du titre, de l’auteur et du premier chapitre  
+    - Récupération automatique du texte brut depuis Project Gutenberg  
+    - Extraction du titre, de l’auteur et du premier chapitre  
 
 ### Analyse textuelle
-- Découpage en paragraphes  
-- Comptage du nombre de mots  
-- Arrondi à la dizaine  
-- Distribution statistique  
-- Calcul des valeurs min / max / moyenne  
+    - Découpage en paragraphes  
+    - Comptage du nombre de mots  
+    - Arrondi à la dizaine  
+    - Distribution statistique  
+    - Calcul des valeurs min / max / moyenne  
 
 ### Graphique personnalisé
-- Création d’un graphique de distribution  
-- Sauvegarde en PNG  
-- Intégration dans le document Word  
+    - Création d’un graphique de distribution  
+    - Sauvegarde en PNG  
+    - Intégration dans le document Word  
 
 ### Traitement d’images
-- Téléchargement d’une image #1 depuis Internet  
-- Recadrage et redimensionnement  
-- Lecture d’un logo noir et blanc  
-- Rotation du logo  
-- Collage du logo sur l’image #1  
+    - Téléchargement d’une image #1 depuis Internet  
+    - Recadrage et redimensionnement  
+    - Lecture d’un logo noir et blanc  
+    - Rotation du logo  
+    - Collage du logo sur l’image #1  
 
 ### Génération du document Word
-- Page de titre avec :
-  - titre du livre  
-  - auteur  
-  - auteur du rapport  
-  - image traitée  
-- Page graphique avec :
-  - graphique  
-  - résumé d’intrigue  
-  - statistiques détaillées  
-  - source des données  
+    - Page de titre avec :
+      - titre du livre  
+      - auteur  
+      - auteur du rapport  
+      - image traitée  
+      
+    - Page graphique avec :
+      - graphique  
+      - résumé d’intrigue  
+      - statistiques détaillées  
+      - source des données  
 
 ### Gestion d’erreurs
-- Téléchargement impossible  
-- Livre introuvable  
-- Chapitre non détecté  
-- Image inaccessible  
-- Fichier Word non générable  
+    - Téléchargement impossible  
+    - Livre introuvable  
+    - Chapitre non détecté  
+    - Image inaccessible  
+    - Fichier Word non générable  
 
 ### Tests unitaires
-- Extraction du chapitre  
-- Analyse des paragraphes  
-- Distribution des longueurs  
+    - Extraction du chapitre  
+    - Analyse des paragraphes  
+    - Distribution des longueurs  
 
 ---
 
@@ -154,3 +155,77 @@ cd analyse-livre-frankenstein`
 3. Lancer le stript principal
 `python3 main.py`
 
+---
+
+## Guide d’utilisation
+
+1. Le script télécharge automatiquement le livre **Frankenstein** depuis Project Gutenberg  
+2. Il extrait :
+     
+       - le titre du livre  
+       - le nom de l’auteur  
+       - le premier chapitre
+  
+4. Il analyse le premier chapitre :
+   
+       - découpe en paragraphes  
+       - comptage du nombre de mots  
+       - arrondi à la dizaine  
+       - création d’une distribution statistique
+  
+6. Il génère un graphique PNG représentant la distribution des longueurs de paragraphes
+
+7. Il télécharge une image #1 depuis Internet  
+
+8. Il lit un logo #2 depuis le disque, le pivote et le colle sur l’image #1  
+
+9. Il génère un document Word contenant :
+
+       - une page de titre  
+       - l’image traitée  
+       - le graphique  
+       - un résumé d’intrigue  
+       - les statistiques détaillées du chapitre  
+   
+10. Le fichier final est généré sous le nom :  
+   **📄 Rapport_Frankenstein.docx**
+
+---
+
+## Gestion des erreurs
+
+Le programme gère :
+
+- erreurs réseau lors du téléchargement du livre ou de l’image  
+- livre introuvable ou format inattendu  
+- chapitre non détecté  
+- image #1 inaccessible  
+- logo manquant ou illisible  
+- erreur lors de la génération du graphique  
+- erreur lors de la création du document Word  
+
+> En cas d’erreur, un message clair est affiché dans la console pour éviter l’arrêt brutal du programme.
+
+## Tests unitaires
+
+Les tests fournis couvrent :
+
+- extraction du titre, de l’auteur et du premier chapitre  
+- analyse des paragraphes (comptage, arrondi, distribution)  
+- cohérence des statistiques générées  
+
+Fichier associé :  
+`test_text_processing.py`
+
+Exécution des tests :
+`bash
+pytest -v`
+
+## Limites actuelles
+- Le résumé d’intrigue est volontairement court (respect du copyright)
+- Le découpage des chapitres dépend du format exact du texte Gutenberg
+- Le graphique est statique (pas d’interactivité)
+- Le document Word utilise des styles simples (pas encore de styles avancés personnalisés)
+- Le traitement d’image reste basique (recadrage + collage du logo)
+
+---
