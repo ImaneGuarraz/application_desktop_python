@@ -27,7 +27,12 @@ def extract_metadata_and_first_chapter(text: str):
     author = author_match.group(1).strip() if author_match else "Auteur inconnu"  # récupère l'auteur
 
     # extrait le chapitre 1
-    chapter_match = re.search(r"CHAPTER I(.*?)(CHAPTER II|$)", text, re.DOTALL)  # isole le chapitre 1
+    chapter_match = re.search(
+    r"(CHAPTER\s+I|Chapter\s+I|CHAPTER\s+1|Chapter\s+1|CHAPTER\s+One|Chapter\s+One)\s*(.*?)(CHAPTER\s+II|Chapter\s+II|CHAPTER\s+2|Chapter\s+2|CHAPTER\s+Two|Chapter\s+Two|$)",
+    text,
+    re.DOTALL
+    ) # isole le chapitre 1
+    
     chapter = chapter_match.group(1).strip() if chapter_match else ""  # récupère le texte du chapitre
 
     # retourne les informations extraites
