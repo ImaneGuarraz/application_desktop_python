@@ -56,17 +56,20 @@ Le programme permet de :
 
 ## Structure du projet
 
-Partie2/  
-│  
-├── text_processing.py  
-├── image_processing.py  
-├── charts_book.py  
-├── report_word.py  
-├── partie2_main.py  
-├── assets/  
-│   └── logo.png  
-│   └── frankenstein_local.jpg 
-└── README.md  
+projet_partie2/
+│
+├── assets/
+│   ├── frankenstein_local.jpg
+│   └── frankenstein_distribution.png   ← ton logo
+│
+├── main.py
+├── image_processing.py
+├── text_processing.py
+├── charts_book.py
+├── report_word.py
+└── test_text_processing.py
+└── README.md
+
 
 > text_processing.py : téléchargement du livre + extraction du chapitre + analyse textuelle  
 > image_processing.py : téléchargement, recadrage, redimensionnement, collage du logo  
