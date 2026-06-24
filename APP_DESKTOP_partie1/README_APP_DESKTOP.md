@@ -1,4 +1,4 @@
-# Projet : Application Desktop d’Analyse de Données (Tkinter)
+# 🖥️ Projet : Application Desktop d’Analyse de Données (Tkinter)
 
 #### Auteur : 
 👩🏽‍💻 Imane
