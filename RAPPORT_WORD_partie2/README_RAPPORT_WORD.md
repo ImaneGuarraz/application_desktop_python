@@ -218,8 +218,7 @@ Fichier associé :
 `test_text_processing.py`
 
 Exécution des tests :
-`bash
-pytest -v`
+`pytest -v`
 
 ## Limites actuelles
 - Le résumé d’intrigue est volontairement court (respect du copyright)
